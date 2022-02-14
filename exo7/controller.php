@@ -1,0 +1,25 @@
+<?php
+include_once("fonction.php");
+
+session_start();
+if(isset($_POST['ok'])){
+$jour=$_POST['jour'];
+$mois=$_POST['mois'];
+$annee=$_POST['annee'];
+$_SESSION['post']=$_POST;
+$arrError=[];
+controle1($jour,'jour',$arrError);
+controle2($mois,'mois',$arrError);
+controle3($annee,'annee',$arrError);
+if(count($arrError)==0){
+datesuivante($jour,$mois,$annee);
+//dateprecedente($jour,$mois,$annee);
+}else{
+    $_SESSION['error']=$arrError;
+    header('location:index.php'); 
+    exit();
+}
+}else{
+header('location:index.php');
+exit();
+}

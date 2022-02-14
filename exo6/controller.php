@@ -1,0 +1,24 @@
+<?php
+include_once("fonction.php");
+
+session_start();
+if(isset($_POST['ok'])){
+$a=$_POST['a'];
+$b=$_POST['b'];
+$c=$_POST['c'];
+$_SESSION['post']=$_POST;
+$arrError=[];
+controle($a,'a',$arrError);
+controle($b,'b',$arrError);
+controle($c,'c',$arrError);
+if(count($arrError)==0){
+    equation($a,$b,$c);
+}else{
+    $_SESSION['error']=$arrError;
+    header('location:index.php'); 
+    exit();
+}
+}else{
+header('location:index.php');
+exit();
+}
