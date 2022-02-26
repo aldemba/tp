@@ -7,16 +7,44 @@
     <title>champs</title>
 </head>
 <body>
+
+<style>
+    
+    body{
+      background-color: yellow;
+    }
+  
+    form{
+      margin-left: 39%;
+      margin-top: 20%;
+    }
+    .inp{
+      border-radius: 2rem;
+      height: 3rem;
+      margin-left: 0.5%;
+    }
+    .inp2{
+      margin-top: 2%;
+      background-color: orange;
+      height: 2%;
+    }
+    label{
+      text-transform: capitalize;
+    }
+    
+  
+    </style>
+
     <?php
     session_start();
     ?>
     <form action="controller.php" method="post">
-    <label>entrez N:</label> <input type="text" name="N" value="<?php if(!isset($_SESSION['error']['N']) && isset($_SESSION['post']) ) 
+    <label>entrez N:</label> <input class="inp" type="text" name="N" value="<?php if(!isset($_SESSION['error']['N']) && isset($_SESSION['post']) ) 
       echo  $_SESSION['post']['N']; else ''  ?>">
       <?php if(isset($_SESSION['error']['N'])):?>
             <span style="color:red"><?php echo $_SESSION['error']['N'] ?></span>
             <?php session_unset(); endif?> <br>
-      <input type="submit" value="valider" name="ok" >
+      <input class="inp2" type="submit" value="valider" name="ok" >
 
     </form>
 

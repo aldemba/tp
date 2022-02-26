@@ -10,6 +10,9 @@
     <?php
     session_start();
     ?>
+
+  
+
     <form action="controller.php" method="post">
     <label>entrez a</label> <input type="text" name="a" value="<?php if(!isset($_SESSION['error']['a']) && isset($_SESSION['post']) ) 
       echo  $_SESSION['post']['a']; else ''  ?>">

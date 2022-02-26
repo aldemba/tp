@@ -2,6 +2,7 @@
 function controle($nbr, string $key, array &$arrError):void
 {
     if(empty($nbr)){
+        
 
         $arrError[$key]="veuillez saisir un nombre";
         

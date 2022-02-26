@@ -22,7 +22,7 @@ function controle($nbr, string $key, array &$arrError):void
 function champs(int $n):void {
   for($i=1;$i<=$n;$i++){
       
-      echo"<br><input><br>";
+      echo"<br><input name='$i' ><br>";
 
  }
 
